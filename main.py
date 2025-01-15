@@ -70,7 +70,7 @@ def form_registration():
        Login = request.form.get('Login')
        Password = request.form.get('Password')
 
-       db_lp = sqlite3.connect('WaterGarden.db')
+       db_lp = sqlite3.connect('instance/WaterGarden.db')
        cursor_db = db_lp.cursor()
        sql_insert = '''INSERT INTO users VALUES('{}','{}');'''.format(Login, Password)
 
@@ -91,7 +91,7 @@ def form_authorization():
         Login = request.form.get('Login')
         Password = request.form.get('Password')
 
-        db_lp = sqlite3.connect('WaterGarden.db')
+        db_lp = sqlite3.connect('instance/WaterGarden.db')
         cursor_db = db_lp.cursor()
         cursor_db.execute(f"SELECT password FROM users WHERE login = '{Login}';")
         pas = cursor_db.fetchall()
