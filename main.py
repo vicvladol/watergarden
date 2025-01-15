@@ -10,6 +10,7 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///WaterGarden.db"
 app.config["SECRET_KEY"] = "abc"
 db = SQLAlchemy()
 
+
 login_manager = LoginManager()
 login_manager.init_app(app)
 
